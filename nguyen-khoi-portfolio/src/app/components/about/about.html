@@ -1,0 +1,52 @@
+<section id="about" class="about">
+  <div class="about-container">
+    <h2 class="section-title">Giới thiệu về Khôi</h2>
+    <div class="about-content">
+      <div class="about-info">
+        <div class="info-card">
+          <h3>Học vấn</h3>
+          <p>{{ profile.about.education }}</p>
+        </div>
+
+        <div class="info-card">
+          <h3>Gia đình</h3>
+          <p>{{ profile.about.family }}</p>
+        </div>
+
+        <div class="info-card">
+          <h3>Tính cách</h3>
+          <ul>
+            @for (trait of profile.about.personality; track trait) {
+              <li>{{ trait }}</li>
+            }
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h3>Sở thích</h3>
+          <ul>
+            @for (interest of profile.about.interests; track interest) {
+              <li>{{ interest }}</li>
+            }
+          </ul>
+        </div>
+      </div>
+
+      <div class="about-skills">
+        <h3>Kỹ năng của Khôi</h3>
+        <div class="skills-grid">
+          @for (skillGroup of profile.skills; track skillGroup.category) {
+            <div class="skill-group">
+              <h4>{{ skillGroup.category }}</h4>
+              <div class="skill-items">
+                @for (skill of skillGroup.items; track skill) {
+                  <span class="skill-tag">{{ skill }}</span>
+                }
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,60 @@
+<section id="hero" class="hero">
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          Xin chào, đây là <br/>
+          <span class="gradient-text">{{ profile.name }}</span>
+        </h1>
+        <p class="hero-subtitle">{{ profile.title }}</p>
+        <p class="hero-description">{{ profile.description }}</p>
+        
+        <div class="hero-buttons">
+          <button class="btn btn-primary" (click)="scrollToContact()">
+            Liên hệ với Khôi
+          </button>
+          <button class="btn btn-secondary" (click)="scrollToProjects()">
+            Xem dự án
+          </button>
+        </div>
+
+        <div class="hero-social">
+          @if (profile.social.github) {
+            <a [href]="profile.social.github" target="_blank" class="social-icon">
+              <i class="fab fa-github"></i>
+            </a>
+          }
+          @if (profile.social.linkedin) {
+            <a [href]="profile.social.linkedin" target="_blank" class="social-icon">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          }
+          @if (profile.social.facebook) {
+            <a [href]="profile.social.facebook" target="_blank" class="social-icon">
+              <i class="fab fa-facebook"></i>
+            </a>
+          }
+          @if (profile.social.instagram) {
+            <a [href]="profile.social.instagram" target="_blank" class="social-icon">
+              <i class="fab fa-instagram"></i>
+            </a>
+          }
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <div class="image-wrapper">
+          <div class="image-background"></div>
+          @if (imageExists) {
+            <img [src]="profile.image" [alt]="profile.name" class="profile-photo" (error)="onImageError()">
+          } @else {
+            <div class="image-placeholder">
+              <span>NK</span>
+              <p class="upload-hint">Chưa có ảnh - Hãy copy ảnh vào thư mục!</p>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

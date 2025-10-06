@@ -1,0 +1,32 @@
+<section id="experience" class="experience">
+  <div class="experience-container">
+    <h2 class="section-title">Kinh nghiệm</h2>
+    <p class="section-subtitle">Hành trình "phát triển" của Khôi</p>
+
+    <div class="timeline">
+      @for (exp of experiences; track exp.title; let i = $index) {
+        <div class="timeline-item" [class.left]="i % 2 === 0" [class.right]="i % 2 !== 0">
+          <div class="timeline-content">
+            <div class="timeline-badge">{{ i + 1 }}</div>
+            <div class="experience-card">
+              <div class="experience-header">
+                <h3>{{ exp.title }}</h3>
+                <span class="company">{{ exp.company }}</span>
+              </div>
+              <span class="period">{{ exp.period }}</span>
+              <p class="description">{{ exp.description }}</p>
+              <div class="achievements">
+                <h4>Thành tựu:</h4>
+                <ul>
+                  @for (achievement of exp.achievements; track achievement) {
+                    <li>{{ achievement }}</li>
+                  }
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

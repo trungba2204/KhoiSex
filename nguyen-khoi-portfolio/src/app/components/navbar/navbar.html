@@ -1,0 +1,17 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-logo">
+      <h2>NK</h2>
+    </div>
+    
+    <ul class="navbar-menu">
+      @for (item of menuItems; track item.id) {
+        <li>
+          <a (click)="scrollToSection(item.id)" class="navbar-link">
+            {{ item.label }}
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+</nav>

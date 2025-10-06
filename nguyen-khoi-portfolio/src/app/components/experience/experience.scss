@@ -1,0 +1,189 @@
+.experience {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+
+  &-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(245, 158, 11, 0.3);
+    }
+  }
+
+  &-header {
+    margin-bottom: 0.75rem;
+
+    h3 {
+      font-size: 1.5rem;
+      color: #1F2937;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .company {
+      color: #1E40AF;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #6B7280;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 3rem;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(135deg, #1E40AF 0%, #14B8A6 100%);
+  }
+
+  &-item {
+    margin-bottom: 3rem;
+    position: relative;
+
+    &.left {
+      .timeline-content {
+        justify-content: flex-end;
+        text-align: right;
+      }
+
+      .timeline-badge {
+        right: -35px;
+      }
+
+      .experience-card {
+        margin-right: 60px;
+      }
+    }
+
+    &.right {
+      .timeline-content {
+        justify-content: flex-start;
+        text-align: left;
+      }
+
+      .timeline-badge {
+        left: -35px;
+      }
+
+      .experience-card {
+        margin-left: 60px;
+      }
+    }
+  }
+
+  &-content {
+    display: flex;
+    position: relative;
+  }
+
+  &-badge {
+    position: absolute;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #F59E0B 0%, #FCD34D 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1F2937;
+    font-weight: 700;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+    z-index: 2;
+  }
+}
+
+.period {
+  display: inline-block;
+  background: #EFF6FF;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #1E40AF;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.description {
+  color: #6B7280;
+  line-height: 1.6;
+  margin: 1rem 0;
+}
+
+.achievements {
+  margin-top: 1.5rem;
+
+  h4 {
+    color: #1F2937;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 1.5rem;
+    color: #6B7280;
+
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+
+      &::marker {
+        color: #F59E0B;
+      }
+    }
+  }
+}
+
+@media (max-width: 968px) {
+  .timeline {
+    &::before {
+      left: 30px;
+    }
+
+    &-item {
+      &.left,
+      &.right {
+        .timeline-content {
+          justify-content: flex-start;
+          text-align: left;
+        }
+
+        .timeline-badge {
+          left: 0;
+        }
+
+        .experience-card {
+          margin-left: 60px;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+<section id="videos" class="videos">
+  <div class="videos-container">
+    <h2 class="section-title">Video của Khôi</h2>
+    <p class="section-subtitle">Những khoảnh khắc đáng nhớ</p>
+
+    @if (videos && videos.length > 0) {
+      <div class="videos-grid">
+        @for (video of videos; track video.title) {
+          <div class="video-card">
+            <div class="video-wrapper">
+              @if (video.type === 'file') {
+                <video controls class="video-player">
+                  <source [src]="video.url" type="video/mp4">
+                  Trình duyệt không hỗ trợ video.
+                </video>
+              } @else {
+                <iframe
+                  [src]="getSafeUrl(getEmbedUrl(video))"
+                  class="video-iframe"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+                </iframe>
+              }
+            </div>
+            <div class="video-info">
+              <h3>{{ video.title }}</h3>
+              <p>{{ video.description }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    } @else {
+      <div class="no-videos">
+        <p>Chưa có video nào. Hãy thêm link YouTube hoặc upload video!</p>
+      </div>
+    }
+  </div>
+</section>

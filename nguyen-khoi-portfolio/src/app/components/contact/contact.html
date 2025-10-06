@@ -1,0 +1,76 @@
+<section id="contact" class="contact">
+  <div class="contact-container">
+    <h2 class="section-title">Liên hệ với Khôi</h2>
+    <p class="section-subtitle">Hãy kết nối với Khôi nhé!</p>
+
+    <div class="contact-content">
+      <div class="contact-info">
+        <div class="contact-card">
+          <div class="icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="info">
+            <h4>Email</h4>
+            <p>{{ contact.email }}</p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="info">
+            <h4>Điện thoại</h4>
+            <p>{{ contact.phone }}</p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="info">
+            <h4>Địa chỉ</h4>
+            <p>{{ contact.location }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="social-section">
+        <h3>Theo dõi Khôi trên</h3>
+        <div class="social-links">
+          @if (social.github) {
+            <a [href]="social.github" target="_blank" class="social-link github">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+          }
+          @if (social.linkedin) {
+            <a [href]="social.linkedin" target="_blank" class="social-link linkedin">
+              <i class="fab fa-linkedin"></i>
+              <span>LinkedIn</span>
+            </a>
+          }
+          @if (social.facebook) {
+            <a [href]="social.facebook" target="_blank" class="social-link facebook">
+              <i class="fab fa-facebook"></i>
+              <span>Facebook</span>
+            </a>
+          }
+          @if (social.instagram) {
+            <a [href]="social.instagram" target="_blank" class="social-link instagram">
+              <i class="fab fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <p>&copy; 2025 Nguyễn Nguyên Khôi. Mọi quyền được bảo lưu (chứ có gì đâu mà bảo lưu 😂)</p>
+  </div>
+</footer>
