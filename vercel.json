@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "installCommand": "npm ci --prefix nguyen-khoi-portfolio",
+  "buildCommand": "npm run vercel-build --prefix nguyen-khoi-portfolio",
+  "outputDirectory": "nguyen-khoi-portfolio/dist/nguyen-khoi-portfolio/browser",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
+
+
